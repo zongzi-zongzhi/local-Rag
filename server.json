@@ -1,11 +1,11 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "local.local-rag",
-  "description": "Codex-oriented local RAG server with semantic search and keyword boost",
-  "vendor": "local-Rag, based on mcp-local-rag by Shinsuke Kagawa",
+  "description": "Local-first RAG server with semantic search and keyword boost",
+  "vendor": "local-Rag",
   "license": "MIT",
   "repository": {
-    "url": "https://github.com/local/local-rag",
+    "url": "https://github.com/zongzi-zongzhi/local-Rag",
     "source": "github"
   },
   "version": "0.15.1",
@@ -148,6 +148,6 @@
     "skills",
     "codex"
   ],
-  "homepage": "https://github.com/local/local-rag",
-  "documentation": "https://github.com/local/local-rag#readme"
+  "homepage": "https://github.com/zongzi-zongzhi/local-Rag",
+  "documentation": "https://github.com/zongzi-zongzhi/local-Rag#readme"
 }

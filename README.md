@@ -1,12 +1,12 @@
 # local-Rag
 
-Codex-oriented local RAG based on `mcp-local-rag`.
+`local-Rag` is a local-first document retrieval and semantic search project for private document libraries.
 
-`local-Rag` is a local-first document retrieval project. It lets Codex search private local documents through MCP tools instead of scanning a large folder every time.
+It indexes local files, stores embeddings locally, and exposes fast search through MCP tools and a CLI so AI assistants can find relevant documents and nearby context without repeatedly scanning large folders.
 
 ## Why This Project
 
-The target use case is a large and growing document library. New files should be processed in the same way as old files, and Codex should quickly locate the most relevant documents and chunks.
+The target use case is a large and growing document library. New files should be processed in the same way as old files, and AI assistants should quickly locate the most relevant documents and chunks.
 
 This project is based on the proven implementation of:
 

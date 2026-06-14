@@ -1,7 +1,7 @@
 {
   "name": "local-rag",
   "version": "0.15.1",
-  "description": "Codex-oriented local RAG MCP server based on mcp-local-rag",
+  "description": "Local-first RAG MCP server for private document search",
   "type": "module",
   "main": "dist/index.js",
   "bin": {
