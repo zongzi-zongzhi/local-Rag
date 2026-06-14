@@ -30,19 +30,19 @@ Instructions that help AI assistants use the RAG tools effectively.
 
 ## `docs`
 
-Project-level documents added for the `local-Rag` fork.
+Project-level product, architecture, structure, roadmap, and development notes.
 
 ## `scripts`
 
-Build, test, and maintenance scripts inherited from upstream.
+Build, test, local indexing, and maintenance scripts.
 
 ## `scripts/silent_start.ps1`
 
-Windows helper used by `更新入库local-Rag.vbs` and `查看入库状态local-Rag.bat`. Its default mode updates the local index by ingesting `BASE_DIR`.
+Windows helper used by `更新入库local-Rag.vbs` and `查看入库状态local-Rag.bat`. Its default mode updates the local index by ingesting configured folders.
 
 ## `scripts/library_panel.ps1`
 
-Windows Forms panel for choosing a document folder, remembering it in `config/local-rag.env.ps1`, running index updates, checking status, and opening logs.
+Windows Forms panel for choosing document folders, remembering them in `config/local-rag.env.ps1`, running index updates, checking status, and opening logs.
 
 ## `local-Rag资料库.vbs`
 
@@ -55,7 +55,3 @@ Visible fallback entry for debugging the panel.
 ## `config`
 
 Local configuration examples. `config/local-rag.env.ps1` is ignored and should hold private local paths.
-
-## `references`
-
-Optional local copies of upstream reference projects. Ignored by Git.

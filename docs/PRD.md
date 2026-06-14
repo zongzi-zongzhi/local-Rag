@@ -2,15 +2,15 @@
 
 ## Background
 
-The user has a large local document collection and wants Codex to locate a few relevant documents quickly according to current goals and context.
+Users often keep research notes, PDFs, project documents, meeting materials, and exported web pages across many local folders. As the library grows, keyword search becomes limited and AI assistants spend too much time reading broad folders instead of finding the few useful passages.
 
 ## Goal
 
-Create `local-Rag`, a local-first RAG project that Codex can call through MCP.
+Create `local-Rag`, a local-first document retrieval project that turns private files into a searchable local index for semantic search and AI-assisted workflows.
 
 ## Target User
 
-- Primary: one user working locally with Codex.
+- Primary: one user working with a private local document library.
 - Later: small teams with shared local or private document collections.
 
 ## User Inputs
@@ -29,23 +29,23 @@ Create `local-Rag`, a local-first RAG project that Codex can call through MCP.
 
 ## MVP Scope
 
-- Use `mcp-local-rag` as the implementation base.
 - Keep MCP and CLI access.
 - Support local semantic search with keyword boost.
+- Support PDF, DOCX, TXT, Markdown, and HTML ingestion.
 - Support incremental replacement through re-ingestion.
-- Add Codex-focused documentation and project structure.
+- Provide Windows-friendly local indexing helpers.
+- Keep private documents, indexes, model caches, and logs out of Git.
 
 ## Non-Goals
 
-- Web UI.
-- SaaS deployment.
+- Hosted SaaS deployment.
 - User accounts.
 - Enterprise permission model.
-- Immediate rewrite of the upstream implementation.
+- Public cloud document storage.
 
 ## Success Criteria
 
 - The project builds locally.
-- Codex can be configured to start the MCP server.
-- Files under configured roots can be ingested and queried.
-- The project documentation clearly explains why this fork exists and what comes next.
+- Local files under configured roots can be ingested and queried.
+- AI tools can connect through MCP and search the same local index.
+- Documentation clearly explains setup, privacy boundaries, and daily usage.

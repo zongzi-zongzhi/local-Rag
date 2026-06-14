@@ -1,19 +1,17 @@
 # Technical Architecture
 
-## Base Project
+## Overview
 
-`local-Rag` is based on `shinpr/mcp-local-rag`.
-
-The upstream architecture is already close to the target MVP:
+`local-Rag` indexes local documents, stores searchable chunks in a local vector database, and exposes retrieval through MCP tools and a command-line interface.
 
 ```text
 local files
   -> parser
-  -> semantic chunker
-  -> Transformers.js embedder
+  -> chunker
+  -> local embeddings
   -> LanceDB vector store
   -> MCP tools / CLI
-  -> Codex
+  -> AI assistant
 ```
 
 ## Key Modules
@@ -44,9 +42,9 @@ local files
 
 ## Security Boundary
 
-Only files inside configured base directories should be ingested or listed.
+Only files inside configured base directories should be ingested or listed. Runtime data, model caches, logs, and private configuration are excluded from Git.
 
-## Manual Silent Index Update
+## Manual Index Update
 
 The intended local workflow is:
 
@@ -57,16 +55,16 @@ document folder
   -> click 更新入库
   -> scripts/silent_start.ps1 runs node dist/index.js ingest for each folder
   -> LanceDB at DB_PATH is updated
-  -> Codex later starts MCP and reads the same DB_PATH
+  -> MCP clients read the same DB_PATH
 ```
 
-This is feasible because indexing and querying are decoupled by the shared local database. It is also stricter than starting a hidden stdio MCP server manually, because stdio MCP servers should normally be started by the MCP client.
+Indexing and querying are decoupled by the shared local database. This lets the user update the index manually while AI tools query the same prepared data later.
 
-`scripts/library_panel.ps1` is a thin Windows Forms layer. It does not implement retrieval itself; it only manages local paths and launches the existing updater/status commands.
+`scripts/library_panel.ps1` is a thin Windows Forms layer. It manages local paths and launches the updater/status commands; retrieval stays in the CLI and MCP server.
 
 ## Future Changes
 
 - Add benchmark scripts for very large local libraries.
-- Add preset configuration for Codex.
-- Add optional Qdrant backend if LanceDB is not enough for the target corpus.
+- Add stronger index health reporting.
+- Add optional alternate vector backends for larger collections.
 - Add metadata filters and document-level grouping tuned for large collections.
