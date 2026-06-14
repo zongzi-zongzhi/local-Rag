@@ -1,0 +1,9 @@
+[mcp_servers.local-rag]
+command = "node"
+args = ["D:/GitHub/local-Rag/dist/index.js"]
+
+[mcp_servers.local-rag.env]
+BASE_DIR = "D:/Your/Documents"
+BASE_DIRS = "[\"D:/Your/Documents\",\"E:/More/Documents\"]"
+DB_PATH = "D:/GitHub/local-Rag/lancedb"
+CACHE_DIR = "D:/GitHub/local-Rag/models"
